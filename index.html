@@ -19,7 +19,7 @@
             <input type="number" name="quantity" class="quantity" value="1" required><br><br>
 
             <label for="type" class="type">Type of Shape</label>
-            <input type="list" class="type" name="type" list="shapetypes" placeholder="Triangle, circle, etc." required>
+            <input type="list" class="type" name="type" list="shapetypes" placeholder="Triangle, circle, etc." value="rectangle" required>
             <datalist id="shapetypes">
                 <option value="circle" class="shapetype"></option>
                 <option value="rectangle" class="shapetype"></option>
@@ -28,19 +28,19 @@
 
             <h3>Dimensions (pixels)</h3>
             <h4>Circle</h4>
-            <label for="circle" class="circle">Radius</label>
-            <input type="number" name="circle" class="circle" value="1">
+            <label for="circle_r" class="circle_r">Radius</label>
+            <input type="number" name="circle_r" class="circle_r" value="1">
             <h4>Rectangle</h4>
-            <label for="rectangle-w" class="rectangle">Width</label>
-            <input type="number" name="rectangle-w" class="rectangle" value="1">
-            <label for="rectangle-h" class="rectangle">Height</label>
-            <input type="number" name="rectangle-h" class="rectangle" value="1">
+            <label for="rectangle_w" class="rectangle_w">Width</label>
+            <input type="number" name="rectangle_w" class="rectangle_w" value="500">
+            <label for="rectangle_h" class="rectangle_h">Height</label>
+            <input type="number" name="rectangle_h" class="rectangle_h" value="400">
 
             <h4>Triangle</h4>
-            <label for="triangle-b" class="triangle">Base</label>
-            <input type="number" name="triangle-b" class="triangle" value="1">
-            <label for="triangle-h" class="triangle">Height</label>
-            <input type="number" name="triangle-h" class="triangle" value="1">
+            <label for="triangle_b" class="triangle_b">Base</label>
+            <input type="number" name="triangle_b" class="triangle_b" value="1">
+            <label for="triangle_h" class="triangle_h">Height</label>
+            <input type="number" name="triangle_h" class="triangle_h" value="1">
 
             <h3>Color</h3>
             <h4>Random?</h4>
@@ -56,7 +56,7 @@
 
             <input type="submit" value="Submit" class="submit">
         </form>
-        <canvas class="shape">
+        <canvas class="shape" id="shape">
 
         </canvas>
     </main>
