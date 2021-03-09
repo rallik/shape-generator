@@ -8,9 +8,11 @@ function canvasInit() {
     return {canvas, ctx};
 } 
 
+
 function getRandomColor(){
     return "#" + Math.floor(Math.random()*16777215).toString(16);
 }
+
 
 function getColor(random) {
     const is_random = random == 'yes' ? true : false;
@@ -18,11 +20,13 @@ function getColor(random) {
     return color;
 }
 
+
 function getCanvasCenter(height, width) {
     let y = height / 2;
     let x = width / 2;
     return {y, x};
 }
+
 
 function createRectangle(count_rect = 1, inputs_rect) {
     console.log("inputs_rect",inputs_rect)
@@ -48,6 +52,7 @@ function createRectangle(count_rect = 1, inputs_rect) {
     ctx_rect.fillRect(topcorner_x, topcorner_y, rect_w, rect_h);
 }
 
+
 function createTriangle(count_tri = 1, inputs_tri) {
     console.log("inputs_tri",inputs_tri)
     const canvas_init_t = canvasInit();
@@ -60,13 +65,10 @@ function createTriangle(count_tri = 1, inputs_tri) {
     let tri_center = getCanvasCenter(canvas_tri.height, canvas_tri.width);
     let tri_center_y = tri_center.y;
     let tri_center_x = tri_center.x;
-    // let tri_start_y = tri_center_y - (0.5 * height);
-    // let tri_start_x = tri_center_x - (0.5 * base); - (height/2)
+
     let tri_start_y = tri_center_y - (height * 0.25);
     let tri_start_x = tri_center_x;
 
-    // let point2x = tri_start_x - (base/2);
-    // let point2y = tri_start_y + height;
     let point2x = tri_start_x - (base/2);
     let point2y = tri_start_y + (height/2);
 
@@ -78,15 +80,13 @@ function createTriangle(count_tri = 1, inputs_tri) {
 
     ctx_tri.fillStyle = tri_color;
     ctx_tri.beginPath()
-    // ctx_tri.moveTo(tri_start_x, tri_start_y)
-    // ctx_tri.lineTo(tri_start_x - (0.5 * base), tri_start_y + height)
-    // ctx_tri.lineTo(tri_start_x + base, tri_start_y)
     ctx_tri.moveTo(tri_start_x, tri_start_y)
     ctx_tri.lineTo(point2x, point2y)
     ctx_tri.lineTo(point3x, point3y)
     ctx_tri.lineTo(tri_start_x, tri_start_y)
     ctx_tri.fill()
 }
+
 
 function createCircle(count_cir = 1, inputs_cir) {
     console.log("inputs_cir",inputs_cir)
@@ -130,6 +130,7 @@ function whichShape(elements) {
     }
 }
 
+
 function onSubmit(event) {
     event.preventDefault()
     console.log(event.target.elements)
@@ -144,5 +145,3 @@ function onSubmit(event) {
 //listeners
 const form = document.getElementById('shapeselect');
 form.addEventListener('submit', onSubmit);
-
-//
